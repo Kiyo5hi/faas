@@ -1,0 +1,13 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: https://faas.kiyo5hi.com
+functions:
+  you:
+    lang: golang-middleware
+    handler: ./you
+    image: kiyo5hi/faas-you:latest
+    platforms: linux/amd64,linux/arm64
+    build_args:
+      TARGETPLATFORM: linux/arm64
+      BUILDPLATFORM: linux/arm64
